@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,8 +34,7 @@ class _DicePageState extends State<DicePage> {
             child: FlatButton(
               onPressed: () {
                 setState(() {
-                  leftDiceNumber = 6;
-                  print('diceNumber = $leftDiceNumber');
+                  leftDiceNumber = Random().nextInt(6) + 1; // 1 + 6
                 });
               },
               child: Image.asset('images/dice$leftDiceNumber.png'),
